@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quick Tally - Status Utility</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "inverse-on-surface": "#eff1f3",
+                            "surface-container-highest": "#e0e3e5",
+                            "error": "#ba1a1a",
+                            "primary-fixed": "#e2dfff",
+                            "surface-dim": "#d8dadc",
+                            "inverse-primary": "#c3c0ff",
+                            "secondary-fixed-dim": "#bec6e0",
+                            "secondary": "#565e74",
+                            "on-secondary-fixed-variant": "#3f465c",
+                            "background": "#f7f9fb",
+                            "surface-bright": "#f7f9fb",
+                            "surface-container-lowest": "#ffffff",
+                            "surface-variant": "#e0e3e5",
+                            "on-tertiary-fixed": "#351000",
+                            "surface-tint": "#4d44e3",
+                            "on-primary-container": "#dad7ff",
+                            "tertiary-fixed-dim": "#ffb695",
+                            "primary-fixed-dim": "#c3c0ff",
+                            "surface-container-low": "#f2f4f6",
+                            "on-tertiary": "#ffffff",
+                            "primary-container": "#4f46e5",
+                            "on-secondary-fixed": "#131b2e",
+                            "tertiary": "#7e3000",
+                            "surface-container": "#eceef0",
+                            "on-error": "#ffffff",
+                            "on-secondary-container": "#5c647a",
+                            "tertiary-container": "#a44100",
+                            "on-primary-fixed": "#0f0069",
+                            "surface-container-high": "#e6e8ea",
+                            "on-surface-variant": "#464555",
+                            "on-tertiary-container": "#ffd2be",
+                            "on-primary": "#ffffff",
+                            "error-container": "#ffdad6",
+                            "on-background": "#191c1e",
+                            "outline": "#777587",
+                            "surface": "#f7f9fb",
+                            "inverse-surface": "#2d3133",
+                            "on-primary-fixed-variant": "#3323cc",
+                            "secondary-fixed": "#dae2fd",
+                            "on-error-container": "#93000a",
+                            "on-secondary": "#ffffff",
+                            "secondary-container": "#dae2fd",
+                            "primary": "#3525cd",
+                            "outline-variant": "#c7c4d8",
+                            "on-surface": "#191c1e",
+                            "tertiary-fixed": "#ffdbcc",
+                            "on-tertiary-fixed-variant": "#7b2f00"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.125rem",
+                            "lg": "0.25rem",
+                            "xl": "0.5rem",
+                            "full": "0.75rem"
+                    },
+                    "spacing": {
+                            "xs": "4px",
+                            "gutter": "16px",
+                            "md": "16px",
+                            "sm": "8px",
+                            "unit": "4px",
+                            "lg": "24px",
+                            "xl": "32px",
+                            "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                            "headline-lg-mobile": ["Inter"],
+                            "mono-data": ["Inter"],
+                            "headline-md": ["Inter"],
+                            "display-tally": ["Inter"],
+                            "body-sm": ["Inter"],
+                            "label-caps": ["Inter"],
+                            "headline-lg": ["Inter"],
+                            "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                            "mono-data": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                            "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                            "display-tally": ["48px", {"lineHeight": "1", "letterSpacing": "-0.04em", "fontWeight": "700"}],
+                            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                            "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                            "headline-lg": ["30px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="w-full top-0 bg-background border-b border-outline-variant flex justify-between items-center h-16 px-gutter max-w-container-max mx-auto">
+<div class="flex items-center gap-sm">
+<span class="font-headline-lg text-headline-lg font-bold text-primary">Quick Tally</span>
+</div>
+<div class="flex items-center gap-md">
+<button aria-label="History" class="text-on-surface-variant hover:bg-surface-container-low p-sm rounded-full transition-colors duration-150 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+</button>
+<button aria-label="Settings" class="text-on-surface-variant hover:bg-surface-container-low p-sm rounded-full transition-colors duration-150 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-container-max px-gutter py-lg md:py-xl flex flex-col items-center justify-center">
+<!-- Utility Interface Container -->
+<div class="w-full max-w-md flex flex-col gap-lg">
+<!-- Tally Display & Controls -->
+<section class="bg-surface-container-lowest border border-outline-variant rounded-xl p-xl flex flex-col items-center gap-lg shadow-sm">
+<div class="flex flex-col items-center gap-xs">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Current Tally</span>
+<div class="font-display-tally text-display-tally text-on-surface tabular-nums" id="main-counter">42</div>
+</div>
+<div class="flex items-center gap-xl">
+<button aria-label="Decrease" class="w-12 h-12 flex items-center justify-center bg-surface-container-lowest border border-outline-variant rounded-full text-on-surface hover:bg-surface-container-low active:scale-95 transition-all duration-150 group" id="btn-decrement">
+<span class="material-symbols-outlined text-2xl group-hover:text-primary transition-colors">remove</span>
+</button>
+<button aria-label="Increase" class="w-16 h-16 flex items-center justify-center bg-primary-container text-on-primary border border-transparent rounded-full hover:bg-primary active:scale-95 transition-all duration-150 shadow-md shadow-primary-container/20 group" id="btn-increment">
+<span class="material-symbols-outlined text-3xl group-hover:scale-110 transition-transform">add</span>
+</button>
+</div>
+</section>
+<!-- Status & System Controls -->
+<section class="flex flex-col gap-md">
+<!-- System Status Feedback -->
+<div class="flex items-center justify-center gap-xs text-primary bg-primary-fixed/20 py-sm px-md rounded-full border border-primary-fixed w-fit mx-auto">
+<span class="material-symbols-outlined text-sm icon-fill" data-icon="check_circle">check_circle</span>
+<span class="font-mono-data text-mono-data">System OK - Synchronized</span>
+</div>
+<!-- Grid of Compact Cards -->
+<div class="grid grid-cols-2 gap-md w-full">
+<!-- Ready Toggle Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col justify-between h-24">
+<div class="flex justify-between items-start w-full">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">State</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">power_settings_new</span>
+</div>
+<div class="flex items-center justify-between w-full">
+<span class="font-body-sm text-body-sm text-on-surface font-medium" id="toggle-label">Ready</span>
+<!-- Custom Toggle Switch -->
+<label class="flex items-center cursor-pointer" for="ACT_TOGGLE_STATUS">
+<div class="relative">
+<input checked="" class="sr-only" id="ACT_TOGGLE_STATUS" type="checkbox"/>
+<div class="block bg-primary-container w-10 h-6 rounded-full transition-colors duration-200" id="toggle-bg"></div>
+<div class="dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform duration-200 transform translate-x-4" id="toggle-dot"></div>
+</div>
+</label>
+</div>
+</div>
+<!-- Refresh / Last Updated Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md flex flex-col justify-between h-24">
+<div class="flex justify-between items-start w-full">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Data</span>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">update</span>
+</div>
+<div class="flex flex-col gap-xs w-full">
+<button class="w-full flex items-center justify-center gap-xs bg-surface-container-low border border-outline-variant rounded text-on-surface font-body-sm text-body-sm py-1 hover:bg-surface-dim active:scale-95 transition-all duration-150" id="ACT_REFRESH_STATUS">
+<span class="material-symbols-outlined text-sm">refresh</span>
+                                Refresh
+                            </button>
+<span class="font-mono-data text-[10px] text-on-surface-variant text-right" id="last-updated-text">Updated: Just now</span>
+</div>
+</div>
+</div>
+<!-- Rate Limit Progress Bar -->
+<div class="w-full flex flex-col gap-xs mt-sm">
+<div class="flex justify-between w-full font-label-caps text-label-caps text-on-surface-variant">
+<span>API Rate Limit</span>
+<span>42/100</span>
+</div>
+<div class="w-full h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container transition-all duration-300" style="width: 42%;"></div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const counterEl = document.getElementById('main-counter');
+            const btnInc = document.getElementById('btn-increment');
+            const btnDec = document.getElementById('btn-decrement');
+            
+            const toggleInput = document.getElementById('ACT_TOGGLE_STATUS');
+            const toggleBg = document.getElementById('toggle-bg');
+            const toggleDot = document.getElementById('toggle-dot');
+            const toggleLabel = document.getElementById('toggle-label');
+
+            const btnRefresh = document.getElementById('ACT_REFRESH_STATUS');
+            const lastUpdatedText = document.getElementById('last-updated-text');
+
+            let currentVal = 42;
+
+            function updateCounter() {
+                counterEl.textContent = currentVal;
+                // Add a brief subtle scale animation on change
+                counterEl.classList.add('scale-105', 'text-primary');
+                setTimeout(() => {
+                    counterEl.classList.remove('scale-105', 'text-primary');
+                }, 150);
+            }
+
+            btnInc.addEventListener('click', () => {
+                currentVal++;
+                updateCounter();
+            });
+
+            btnDec.addEventListener('click', () => {
+                currentVal--;
+                updateCounter();
+            });
+
+            toggleInput.addEventListener('change', (e) => {
+                if(e.target.checked) {
+                    toggleBg.classList.remove('bg-surface-variant');
+                    toggleBg.classList.add('bg-primary-container');
+                    toggleDot.classList.add('translate-x-4');
+                    toggleLabel.textContent = 'Ready';
+                } else {
+                    toggleBg.classList.remove('bg-primary-container');
+                    toggleBg.classList.add('bg-surface-variant');
+                    toggleDot.classList.remove('translate-x-4');
+                    toggleLabel.textContent = 'Paused';
+                }
+            });
+
+            btnRefresh.addEventListener('click', () => {
+                const icon = btnRefresh.querySelector('.material-symbols-outlined');
+                icon.classList.add('animate-spin');
+                setTimeout(() => {
+                    icon.classList.remove('animate-spin');
+                    const now = new Date();
+                    lastUpdatedText.textContent = `Updated: ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
+                }, 600);
+            });
+            
+            // Initial transition setup for counter
+            counterEl.style.transition = 'transform 0.15s ease-out, color 0.15s ease-out';
+        });
+    </script>
+</body></html>

@@ -1,0 +1,11 @@
+[
+  {
+    "screenId": "23263bf1cb31439783750946de23756c",
+    "name": "Status Utility - Quick Tally",
+    "type": "app-screen",
+    "description": "Status Utility - Quick Tally screen",
+    "surfaceIds": [
+      "SURF_STATUS_UTILITY"
+    ]
+  }
+]

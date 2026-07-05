@@ -1,0 +1,294 @@
+{
+  "generatedAt": "2026-07-05T23:51:44.879Z",
+  "screenCount": 1,
+  "screens": {
+    "23263bf1cb31439783750946de23756c": {
+      "screenId": "23263bf1cb31439783750946de23756c",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "w-full",
+            "top-0",
+            "bg-background",
+            "border-b",
+            "border-outline-variant",
+            "flex",
+            "justify-between",
+            "items-center",
+            "h-16",
+            "px-gutter"
+          ],
+          "childCount": 2
+        },
+        {
+          "tag": "main",
+          "layout": "flex-col",
+          "classes": [
+            "flex-1",
+            "w-full",
+            "max-w-container-max",
+            "px-gutter",
+            "py-lg",
+            "md:py-xl",
+            "flex",
+            "flex-col",
+            "items-center",
+            "justify-center"
+          ],
+          "childCount": 21
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "History",
+          "classes": [
+            "text-on-surface-variant",
+            "hover:bg-surface-container-low",
+            "p-sm",
+            "rounded-full",
+            "transition-colors",
+            "duration-150",
+            "active:scale-95",
+            "transition-transform"
+          ],
+          "icon": "history",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/history",
+          "expectedRoute": "/history",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Settings",
+          "classes": [
+            "text-on-surface-variant",
+            "hover:bg-surface-container-low",
+            "p-sm",
+            "rounded-full",
+            "transition-colors",
+            "duration-150",
+            "active:scale-95",
+            "transition-transform"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:/settings",
+          "expectedRoute": "/settings",
+          "routeInferred": true
+        },
+        {
+          "kind": "button",
+          "label": "Decrease",
+          "classes": [
+            "w-12",
+            "h-12",
+            "flex",
+            "items-center",
+            "justify-center",
+            "bg-surface-container-lowest",
+            "border",
+            "border-outline-variant",
+            "rounded-full",
+            "text-on-surface",
+            "hover:bg-surface-container-low",
+            "active:scale-95",
+            "transition-all",
+            "duration-150",
+            "group"
+          ],
+          "icon": "remove",
+          "action": "destructive",
+          "expectedBehavior": "perform destructive action with visible feedback or confirmation"
+        },
+        {
+          "kind": "button",
+          "label": "Increase",
+          "classes": [
+            "w-16",
+            "h-16",
+            "flex",
+            "items-center",
+            "justify-center",
+            "bg-primary-container",
+            "text-on-primary",
+            "border",
+            "border-transparent",
+            "rounded-full",
+            "hover:bg-primary",
+            "active:scale-95",
+            "transition-all",
+            "duration-150",
+            "shadow-md",
+            "shadow-primary-container/20",
+            "group"
+          ],
+          "icon": "add",
+          "action": "increment",
+          "expectedBehavior": "increase visible value/state and persist if PRD requires"
+        },
+        {
+          "kind": "button",
+          "label": "ACT_REFRESH_STATUS",
+          "classes": [
+            "w-full",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-xs",
+            "bg-surface-container-low",
+            "border",
+            "border-outline-variant",
+            "rounded",
+            "text-on-surface",
+            "font-body-sm",
+            "text-body-sm",
+            "py-1",
+            "hover:bg-surface-dim",
+            "active:scale-95",
+            "transition-all",
+            "duration-150"
+          ],
+          "icon": "refresh",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "checkbox",
+          "label": "ACT_TOGGLE_STATUS",
+          "placeholder": "",
+          "name": "ACT_TOGGLE_STATUS",
+          "classes": [
+            "sr-only"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "history",
+        "settings",
+        "remove",
+        "add",
+        "check_circle",
+        "power_settings_new",
+        "update",
+        "refresh"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "inverse-on-surface": "#eff1f3",
+        "surface-container-highest": "#e0e3e5",
+        "error": "#ba1a1a",
+        "primary-fixed": "#e2dfff",
+        "surface-dim": "#d8dadc",
+        "inverse-primary": "#c3c0ff",
+        "secondary-fixed-dim": "#bec6e0",
+        "secondary": "#565e74",
+        "on-secondary-fixed-variant": "#3f465c",
+        "background": "#f7f9fb",
+        "surface-bright": "#f7f9fb",
+        "surface-container-lowest": "#ffffff",
+        "surface-variant": "#e0e3e5",
+        "on-tertiary-fixed": "#351000",
+        "surface-tint": "#4d44e3",
+        "on-primary-container": "#dad7ff",
+        "tertiary-fixed-dim": "#ffb695",
+        "primary-fixed-dim": "#c3c0ff",
+        "surface-container-low": "#f2f4f6",
+        "on-tertiary": "#ffffff",
+        "primary-container": "#4f46e5",
+        "on-secondary-fixed": "#131b2e",
+        "tertiary": "#7e3000",
+        "surface-container": "#eceef0",
+        "on-error": "#ffffff",
+        "on-secondary-container": "#5c647a",
+        "tertiary-container": "#a44100",
+        "on-primary-fixed": "#0f0069",
+        "surface-container-high": "#e6e8ea",
+        "on-surface-variant": "#464555",
+        "on-tertiary-container": "#ffd2be",
+        "on-primary": "#ffffff",
+        "error-container": "#ffdad6",
+        "on-background": "#191c1e",
+        "outline": "#777587",
+        "surface": "#f7f9fb",
+        "inverse-surface": "#2d3133",
+        "on-primary-fixed-variant": "#3323cc",
+        "secondary-fixed": "#dae2fd",
+        "on-error-container": "#93000a",
+        "on-secondary": "#ffffff",
+        "secondary-container": "#dae2fd",
+        "primary": "#3525cd",
+        "outline-variant": "#c7c4d8",
+        "on-surface": "#191c1e",
+        "tertiary-fixed": "#ffdbcc",
+        "on-tertiary-fixed-variant": "#7b2f00"
+      },
+      "fonts": [
+        "Inter",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "gridCols": 2,
+        "flexDirection": "col"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "History",
+          "icon": "history",
+          "action": "navigate",
+          "route": "/history",
+          "expectedBehavior": "navigate:/history"
+        },
+        {
+          "kind": "button",
+          "label": "Settings",
+          "icon": "settings",
+          "action": "navigate",
+          "route": "/settings",
+          "expectedBehavior": "navigate:/settings"
+        },
+        {
+          "kind": "button",
+          "label": "Decrease",
+          "icon": "remove",
+          "action": "destructive",
+          "expectedBehavior": "perform destructive action with visible feedback or confirmation"
+        },
+        {
+          "kind": "button",
+          "label": "Increase",
+          "icon": "add",
+          "action": "increment",
+          "expectedBehavior": "increase visible value/state and persist if PRD requires"
+        },
+        {
+          "kind": "button",
+          "label": "ACT_REFRESH_STATUS",
+          "icon": "refresh",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "ACT_TOGGLE_STATUS",
+          "type": "checkbox",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [],
+      "title": "Status Utility - Quick Tally"
+    }
+  }
+}
