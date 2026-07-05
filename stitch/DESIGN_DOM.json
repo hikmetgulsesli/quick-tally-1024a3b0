@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T23:51:44.879Z",
+  "generatedAt": "2026-07-05T23:52:10.269Z",
   "screenCount": 1,
   "screens": {
     "23263bf1cb31439783750946de23756c": {
@@ -288,7 +288,7 @@
         }
       ],
       "tabBar": [],
-      "title": "Status Utility - Quick Tally"
+      "title": "Quick Tally - Status Utility"
     }
   }
 }
